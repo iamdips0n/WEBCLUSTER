@@ -9,4 +9,7 @@ function start() {
     // Fade out, then remove the splash screen
     splash.addEventListener("transitionend", () => splash.remove());
     splash.classList.add("hide");
+    setTimeout(() => {
+    document.querySelectorAll('.slide-in').forEach(el => el.classList.add('play'))
+}, 400)
 }

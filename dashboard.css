@@ -15,8 +15,9 @@
 
 /* HIDE SPLASH SCREEN*/
 #splash.hide {
-    opacity: 0; visibility: hidden;
-    transition: all 1s;
+    transform: translateY(-100%);
+    pointer-events: none;
+    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 * {
@@ -168,4 +169,26 @@ section#hero {
     left: 2rem;
     width: unset;
 }
+}
+
+/* slide in */
+.slide-in {
+    opacity: 0;
+    transform: translateX(-700px) skew(30deg);
+}
+.slide-in.play {
+    opacity:1;
+    animation: slideIn 1.5s ease-in-out both;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-700px) skew(30deg)
+    }
+    75% {
+        transform: translateX(100px) scale(0.9) skew(-10deg)
+    }
+    100% {
+        transform: translateX(0px);
+    }
 }
