@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
+
+
+body {
+    background-color: rgb(31, 29, 29);
+}
+
+h1 {
+    color: white;
+}
+
+
+
+/* adding root and growing whole tree under it ,not above:)  */
+:root {
+    --border-color: rgb(0, 0, 0);
+}
+
+/* Something Cool */
+.game-container {
+    position: absolute;
+    top: 5%;
+    left: 0%;
+
+    display: grid;
+    justify-content: center;
+    column-gap: 7vw;
+    grid-template-rows: 13vw;
+    grid-template-columns: repeat(2, 12vw);
+
+    margin: 0;
+    width: 100%;
+    height: 100%;
+
+    transition: 0.5s ease-in-out;
+}
+
+
+/* Snake Game */
+.snake-game {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4vw;
+
+    text-align: center;
+    text-decoration: none;
+
+    background-color: rgb(255, 255, 255, 0.15);
+    outline: 0.2vw solid var(--border-color);
+    box-shadow: 0.7vw 0.7vw 0px var(--border-color);
+
+    transition: 0.2s ease-in-out;
+} 
+.snake-game:hover {
+    transform: translate(0.2vw, 0.2vw);
+    box-shadow: 0.5vw 0.5vw 0px 0px var(--border-color);
+}
+
+.snake-game:active {
+    transform: translate(0.7vw, 0.7vw);
+    box-shadow: none;
+}
+.snake-img {
+    width: 90%;
+    height: 75%;
+}
+.snake-title {
+    font-family: "Comic Relief";
+    color: black;
+    font-size: 2.5vw;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+
+/* Pac-Man */
+
+.pacman_game {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4vw;
+
+    text-align: center;
+    text-decoration: none;
+
+    background-color: rgb(255, 255, 255, 0.15);
+    outline: 0.2vw solid var(--border-color);
+    box-shadow: 0.7vw 0.7vw 0px var(--border-color);
+
+    transition: 0.2s ease-in-out;
+} 
+.pacman_game:hover {
+    transform: translate(0.2vw, 0.2vw);
+    box-shadow: 0.5vw 0.5vw 0px 0px var(--border-color);
+}
+
+.pacman_game:active {
+    transform: translate(0.7vw, 0.7vw);
+    box-shadow: none;
+}
+.pacImg {
+    width: 90%;
+    height: 75%;
+}
+.pacman-title {
+    font-family: "Comic Relief";
+    color: black;
+    font-size: 1.6vw;
+    text-transform: uppercase;
+    font-weight: 600;
+}
