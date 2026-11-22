@@ -1,3 +1,24 @@
+/*SPLASH SCREEN*/
+#splash {
+    /* FULLSCREEN*/
+    position: fixed; top: 0; left: 0; z-index: 999;
+    width: 100vw; height: 100vh;
+
+    /* CENTER */
+    display: flex;
+    align-items: center; justify-content: center;
+
+    /* COSMETICS*/
+    font-size: 24px;
+    color: #fff; background: #000;
+}
+
+/* HIDE SPLASH SCREEN*/
+#splash.hide {
+    opacity: 0; visibility: hidden;
+    transition: all 1s;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +30,6 @@ body {
   height: 100vh;
   background-color: #000;
   background: url("https://i.pinimg.com/originals/c1/fc/9d/c1fc9d7f6ae08d56f2b84e81799790a5.gif") center / cover no-repeat;
-  background-position: fill;
 }
 
 li{
@@ -19,7 +39,7 @@ li{
 a{
     text-decoration: none;
     color:#fff;
-    font-size: lrem;
+    font-size: 1rem;
 }
 
 a:hover{
@@ -68,7 +88,7 @@ header{
     font-size: 0.8rem;
     font-weight: bold;
     cursor: pointer;
-    transition: scale 0.2;
+    transition: scale 0.2s;
 }
 
 .action_btn:hover{
