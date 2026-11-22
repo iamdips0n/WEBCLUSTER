@@ -20,7 +20,7 @@ var pointY;
 
 var gameOver = false;
 
-
+//board things
 window.onload = function() {
     board = document.getElementById("board");
     board.height = rows * blockSize;
@@ -43,7 +43,7 @@ function update() {
     context.fillStyle="navy";
     context.fillRect(0, 0, board.width, board.height);
 
-     //points
+     //yummy points for our pet anaconda :)
     context.fillStyle="gold";
     context.fillRect(pointX, pointY, blockSize, blockSize);
 
@@ -59,11 +59,13 @@ function update() {
         body[0] = [headX, headY]
     }
 
-    //snake
+    //our anaconda's body since he will eat sooo much
     context.fillStyle="green";
     headX += speedX * blockSize;
     headY += speedY * blockSize;
     context.fillRect(headX, headY, blockSize, blockSize);
+
+    // game over if the user dont know to play a damn snake game!!
     for (let i = 0; i < body.length; i++)
         context.fillRect(body[i][0], body[i][1], blockSize, blockSize);
 
@@ -76,19 +78,19 @@ function update() {
             gameOver = true;
         }
     }
-    //GameOver Text
+    //GameOver Text :(
 if (gameOver) {
     context.textAlign = "center";
         context.fillStyle = "#FF0000";
         context.font = "20px 'Comic Relief', monospace";
         context.fillText("Game Over!", (board.width / 2), (board.height / 2));
 
-        //gameover scores
+        //gameover scores yoo hoo!!
         context.fillStyle = "#0BFF03";
         context.font = "20px 'Cosmic Relief', monospace";
         context.fillText("Score : " + body.length, (board.width / 2), (board.height / 2) + 25);
 
-        // Restart the game
+        // Restart the game so that you can play again <3
          context.fillStyle = "#FFFFFF";
         context.font = "20px 'Cosmic Relief', monospace";
         context.fillText("Press Space to Play Again!", (board.width / 2), (board.height / 2) - 20);
@@ -103,6 +105,7 @@ window.addEventListener('keydown', m); {
     } 
 }
 
+//snake movement keys hush hush hush!!!
 function move(m) {
     //Restart The Game 
     if (gameOver && m.code == "Space") {
@@ -127,6 +130,7 @@ function move(m) {
     }
 }
 
+// points generator
 function locatepoints() {
     pointX = Math.floor(Math.random() * cols) * blockSize;
     pointY = Math.floor(Math.random() * rows) * blockSize;
