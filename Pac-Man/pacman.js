@@ -1,3 +1,4 @@
+
 //board
 let board;
 const rowCount = 21;
@@ -34,9 +35,9 @@ const tileMap = [
     "XXXX X XXXXX X XXXX",
     "OOOX X       X XOOO",
     "XXXX X XXXXX X XXXX",
-    "X                 X",
-    "X XXX XX X XX XXX X",
-    "X     X  P  X     X",
+    "XXXX              X",
+    "XXXX  XX X XX XXX X",
+    "X        P        X",
     "X XXX X XXX X XXX X",
     "X     X X X X     X",
     "X XXXX X X X XXXX X",
