@@ -8,6 +8,7 @@ function startSplash() {
   bgm.volume = 0.4;
   bgm.play();
 }
+// a cool soundeffect when you die, got from pixabay!!
 
 //board
 let board;

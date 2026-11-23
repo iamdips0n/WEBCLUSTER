@@ -4,10 +4,13 @@ function startSplash() {
   document.getElementById("splash").classList.add("hide");
 
   const bgm = document.getElementById("bgm");
-  bgm.volume = 0.4;
+  bgm.volume = 0.2;
   bgm.play();
 }
-
+// SoundEffects To make The game Even cooler
+// SoundEffects From https://mixkit.co/free-sound-effects/
+var getpoints = new Audio("pointclaim.wav");
+var itsOverBro = new Audio("gameOver.mp3");
 
 // board
 var blockSize = 25;
@@ -81,12 +84,12 @@ function update() {
         context.fillRect(body[i][0], body[i][1], blockSize, blockSize);
 
     if (headX < 0 || headX >= cols*blockSize || headY < 0 || headY >= rows*blockSize) {
-        gameOver = true;
+        endGame();
     }
 
     for (let i = 0; i < body.length; i++) {
         if (headX == body[i][0] && headY == body[i][1]) {
-            gameOver = true;
+            endGame();
         }
     }
     //GameOver Text :(
@@ -107,6 +110,13 @@ if (gameOver) {
         context.fillText("Press Space to Play Again!", (board.width / 2), (board.height / 2) - 20);
     }
 
+
+    // a cool soundeffect whwn snake gets a point
+    if (headX == pointX && headY == pointY) {
+        body.push([pointX, pointY]);
+        getpoints.play();
+        locatepoints();
+    }
 }
 
 
@@ -156,4 +166,28 @@ function restart() {
     body = [];
     gameOver = false;
     locatepoints();
+
+    // to restart the bgm music because its cool!
+    itsOverBro.pause();
+
+    var bgm = document.getElementById("bgm");
+    bgm.currentTime = 0;
+    bgm.play();
+
+}
+
+// Cool Soundeffect whwn the user dies!!
+function endGame() {
+    if (gameOver) return; //Fixes The Double Spammsss
+    gameOver = true;
+
+    //reset audio stuff
+    const music = document.getElementById("bgm");
+    if (music) {
+        music.pause();
+        music.currentTime = 0;
+    }
+
+    itsOverBro.currentTime = 0;
+    itsOverBro.play();
 }
