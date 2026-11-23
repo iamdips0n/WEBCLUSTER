@@ -19,8 +19,8 @@ let pacmanLeftImage;
 let pacmanRightImage;
 let wallImage;
 
-//X = wall, O = skip, P = pac man, ' ' = food
-//Ghosts: b = blue, o = orange, p = pink, r = red
+//Map for The Game
+//X is block and O is no entry!!
 const tileMap = [
     "XXXXXXXXXXXXXXXXXXX",
     "X    X   X   X    X",
@@ -64,9 +64,7 @@ window.onload = function() {
 
     loadimages();
     loadmap();
-   // console.log(walls.size);
-   // console.log(foods.size);
-   // console.log(ghosts.size);
+   //consoles
    for(let ghost of ghosts.values()) {
     const newDirection = directions[Math.floor(Math.random()*4)];
     ghost.updateDirection(newDirection);
@@ -75,7 +73,7 @@ window.onload = function() {
    document.addEventListener("keyup", movePacman);
 }
 
-
+// pacman and ghosts!!
 function loadimages() {
     wallImage = new Image();
     wallImage.src = "./wall.png";
@@ -106,6 +104,7 @@ function loadimages() {
 
 }
 
+// Adding everything in the map
 function loadmap() {
     walls.clear();
     foods.clear();
@@ -150,6 +149,7 @@ function loadmap() {
     }
 }
 
+// Game Over 
 function update() {
     if (gameOver) {
         return;
@@ -159,6 +159,7 @@ function update() {
     setTimeout(update, 50);
 }
 
+// in simple words make them appeaer
 function draw() {
     context.clearRect(0, 0, board.width, board.height);
 context.drawImage(pacman.image, pacman.x, pacman.y, pacman.width, pacman.height);
@@ -173,7 +174,7 @@ for (let food of foods.values()) {
     context.fillRect(food.x, food.y, food.width, food.height);
 }
 
-//score
+//scoreboard
 context.fillStyle = "white";
 context.font = "14px sans-serif";
 if (gameOver) {
@@ -184,6 +185,7 @@ else {
 }
 }
 
+// Game Over conditions
 function move() {
     pacman.x += pacman.velocityX;
     pacman.y += pacman.velocityY;
@@ -224,7 +226,7 @@ function move() {
         }
     }
 
-    //check food collision
+    //check food taken or collected :)
     let foodEaten = null;
     for (let food of foods.values()) {
         if (collision(pacman, food)) {
@@ -233,6 +235,7 @@ function move() {
             break;
         }
     }
+    // Remove the collected food
     foods.delete(foodEaten);
 
     //next level
@@ -242,6 +245,7 @@ function move() {
     }
 }
 
+// Reset The Game
 function movePacman(e) {
     if (gameOver) {
         loadmap();
@@ -266,7 +270,7 @@ function movePacman(e) {
         pacman.updateDirection('R');
     }
 
-    //update pacman images
+    //update pacman
     if (pacman.direction == 'U') {
         pacman.image = pacmanUpImage;
     }
@@ -280,6 +284,7 @@ function movePacman(e) {
         pacman.image = pacmanRightImage;
     }
 }
+//collisions
 
 function collision(a, b) {
     return a.x < b.x + b.width &&
@@ -288,6 +293,7 @@ function collision(a, b) {
     a.y + a.height > b.y;
 }
 
+//reset positions after dying
 function resetPositions() {
     pacman.reset();
     pacman.velocityX = 0;

@@ -11,13 +11,14 @@
 <script src="bgm.js"></script>
 <body>
 
-    <!-- SPLASH SCREEN-->
+    <!-- SPLASH SCREEN To make the background music play-->
      <div id="splash" onclick="start()">
          Click Anywhere To Start!
      </div>
 
 
    <header>
+    <!--Navigationbar for Desktop Users <3 -->
     <div class="navbar">
         <div class="logo"><a href="#">iamdips0n</a></div>
         <ul class="links">
@@ -31,6 +32,7 @@
             <i class="fa-solid fa-bars"></i>
         </div>
     </div>
+    <!--Dropdown menu for mobile users :)-->
     <div class="dropdown_menu">
         <li><a href="https://github.com/iamdips0n target="_blank" rel="noopener"">Devloper</a></li>
             <li><a href="https://phantom.hackclub.com/?ref=tGLGH" target="_blank" rel="noopener">Phantom</a></li>
@@ -39,7 +41,7 @@
             <li> <a href="./Games/game.html" class="action_btn">Start Playing</a></li> 
     </div>
    </header> 
-
+<!--The Webcluster and the description in middle-->
    <main>
     <section id="hero">
         <h1 class="slide-in">WEBCLUSTER</h1>
@@ -47,6 +49,7 @@
     </section>
    </main>
 
+   <!--Button Properties-->
    <script>
     const toggleBtn = document.querySelector('.toggle_btn')
     const toggleBtnIcon = document.querySelector('.toggle_btn i')
@@ -61,7 +64,7 @@
         : 'fa-solid fa-bars'
     }
    </script>
-
+<!--Cool Japanese Lofi BackGround Song From Youtube-->
    <audio id="bgm" src="WEBCLUSTERHOME.mp3" loop></audio>
 </body>
 </html>

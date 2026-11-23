@@ -9,6 +9,7 @@ body {
 }
 
 /* adding root and growing whole tree under it ,not above:)  */
+/* I am really Bad at jokes */
 :root {
     --border-color: rgb(0, 0, 0);
     --bg: rgb(245, 245, 245);

@@ -1,3 +1,13 @@
+// background music
+function startSplash() {
+  document.getElementById("splash").classList.add("hide");
+
+  const bgm = document.getElementById("bgm");
+  bgm.volume = 0.4;
+  bgm.play();
+}
+
+
 // board
 var blockSize = 25;
 var rows = 20;
