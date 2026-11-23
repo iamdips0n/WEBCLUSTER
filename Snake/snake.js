@@ -1,4 +1,5 @@
 // background music
+// background music from Pixabay; 
 function startSplash() {
   document.getElementById("splash").classList.add("hide");
 

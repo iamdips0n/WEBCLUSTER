@@ -1,3 +1,5 @@
+// background Music from Youtube!!
+
 function start() {
     const splash = document.getElementById("splash");
     const bgm = document.getElementById("bgm");

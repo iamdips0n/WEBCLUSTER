@@ -1,4 +1,14 @@
 
+// background music
+// background music from Pixabay; 
+function startSplash() {
+  document.getElementById("splash").classList.add("hide");
+
+  const bgm = document.getElementById("bgm");
+  bgm.volume = 0.4;
+  bgm.play();
+}
+
 //board
 let board;
 const rowCount = 21;
@@ -8,6 +18,7 @@ const boardwidth = columnCount*tileSize;
 const boardheight = rowCount*tileSize;
 let context;
 
+// images from Pinterest !!
 //images
 let pinkGhostImage;
 let blueGhostImage;
