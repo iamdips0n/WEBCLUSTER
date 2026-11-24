@@ -5,11 +5,17 @@ function startSplash() {
   document.getElementById("splash").classList.add("hide");
 
   const bgm = document.getElementById("bgm");
-  bgm.volume = 0.4;
+  bgm.volume = 0.2;
   bgm.play();
 }
 // a cool soundeffect when you die, got from pixabay!!
+const itsOverBro = new Audio("damage.wav");
 
+// I was getting a delay so preload it!!
+itsOverBro.preload = "auto";
+itsOverBro.load();
+
+const itsOfficiallyOverBro = new Audio("gameover.wav");
 //board
 let board;
 const rowCount = 21;
@@ -211,14 +217,18 @@ function move() {
         }
     }
 
-    //move ghosts
+    //pacman collisions
     for (let ghost of ghosts.values()) {
         if (collision(ghost, pacman)) {
             lives -= 1;
             if (lives ==0) {
-                gameOver = true;
+                endGame();
                 return;
             }
+            // Our cool sound effect!!!!!!
+            itsOverBro.currentTime = 0;
+            itsOverBro.play();
+        
             resetPositions();
         }
 
@@ -265,6 +275,14 @@ function movePacman(e) {
         lives = 5;
         score = 0;
         gameOver = false;
+
+        // Replay our cool background music when game restarts!!
+        itsOfficiallyOverBro.pause();
+        const bgm = document.getElementById("bgm")
+        bgm.currentTime = 0;
+        bgm.play();
+
+
         update();
         return;
     }
@@ -375,4 +393,18 @@ class block {
         this.x = this.startX;
         this.y = this.startY;
     }
+}
+
+// Sound Effect, i kinda was lazy so adding it at the last :)
+function endGame() {
+if (gameOver) return; //stops the boring loop
+
+gameOver = true;
+
+    const bgm = document.getElementById("bgm");
+    bgm.pause();
+    bgm.currentTime = 0;
+
+itsOfficiallyOverBro.currentTime = 0;
+itsOfficiallyOverBro.play();
 }
