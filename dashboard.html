@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -46,6 +47,31 @@
     <section id="hero">
         <h1 class="slide-in">WEBCLUSTER</h1>
         <p>Just Made For Chilling, Want to Play Games?? </p>
+
+<!--adding an music player to the dashboard!!!-->
+<div id="player-text">
+    <h3 id="player-title">Music Player</h3>
+
+        <div id="mplayer">
+    <img id="covers" src="./Music/Earrings.jpg" />
+    <div id="songName">Song</div>
+    <div id="artist">Artist</div>
+
+    <input id="playback" type="range">
+
+    <!--Icons From https://fontawesome.com/search?ic=free-collection-->
+    <div id="nav-buttons">
+        <i id="shuffle" class="fa-solid fa-shuffle"></i>
+        <i id="previous" class="fa-solid fa-backward fa-1.5x"></i>
+        <i id="playSong" class="fa-solid fa-play fa-2x"></i>
+        <i id="next" class="fa-solid fa-forward fa-1.5x"></i>
+        <i id="repeat" class="fa-solid fa-repeat"></i>
+    </div>
+    </div>
+
+
+    
+</div>
     </section>
    </main>
 
@@ -67,26 +93,5 @@
 <!--Cool Japanese Lofi BackGround Song From Youtube-->
    <audio id="bgm" src="WEBCLUSTERHOME.mp3" loop></audio>
 
-
-<!--adding an music player to the dashboard!!!-->
-
-<div id="mplayer">
-    <img id="covers" />
-    <div id="songName">Song</div>
-    <div id="artist">Artist</div>
-
-    <!--Icons From https://fontawesome.com/search?ic=free-collection-->
-    <div id="nav-buttons">
-        <i class="fa-solid fa-shuffle"></i>
-        <i class="fa-solid fa-backward fa-2x"></i>
-        <i class="fa-solid fa-play fa-3x"></i>
-        <i class="fa-solid fa-forward fa-2x"></i>
-        <i class="fa-solid fa-repeat"></i>
-    </div>
-
-    <input id="playback" type="range">
-
-    
-</div>
 </body>
 </html>
