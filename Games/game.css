@@ -2,6 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
 
 
+
+#gamevideo {
+position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 0; }
+
+    body.gamevideo-active #gamevideo {
+    display: block;
+}
+
 body {
     margin: 0;
     font-family: "Inconsolata", monospace;
