@@ -16,6 +16,7 @@ function start() {
 }, 400)
 }
 
+// Giving Names To different parts of our music player
 const songCover = document.getElementById("covers");
 const songName = document.getElementById("songName");
 const songArtist = document.getElementById("artist");
@@ -26,6 +27,7 @@ const playbutton = document.getElementById("playSong");
 const prev = document.getElementById("previous");
 const next = document.getElementById("next");
 
+// listing every sond and their assets
 const songs = [
     {
         name: "Earrings",
@@ -83,6 +85,7 @@ const songs = [
     }
 ];
 
+// make the ssets appear in the player, cool!!
 const audio = document.createElement("audio");
 let currentSong = 0;
 updateSong();
@@ -96,6 +99,7 @@ prev.addEventListener("click", function() {
 
 });
 
+// Switch songs if you dont like, but you will definately like it!!!
 next.addEventListener("click", function() {
     if (currentSong == songs.length - 1) {
         return;
@@ -104,6 +108,7 @@ next.addEventListener("click", function() {
     updateSong();
 });
 
+// change in play and pause button, just making it cool!!
 playbutton.addEventListener("click", function() {
     if (!audio.paused) {
         audio.pause();
@@ -129,7 +134,7 @@ audio.addEventListener("pause", changeplayicon);
 audio.addEventListener("ended", changeplayicon);
 
 
-
+//play the audio of song, 
 function updateSong() {
     const song = songs[currentSong];
     const playing = !audio.paused;
@@ -147,12 +152,12 @@ function updateSong() {
     playback.max = audio.duration;
     }
 }
-
+// playback bar or slider functions, making the music player more cooler!!
 playback.addEventListener("change", function() {
     audio.currentTime = playback.value;
 });
 
-
+// can skip into any part of song, hurray!!
 function movePlayback() {
     playback.value = audio.currentTime;
 };
