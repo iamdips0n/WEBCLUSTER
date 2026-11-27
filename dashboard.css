@@ -33,11 +33,27 @@ body {
   background: url("https://i.pinimg.com/originals/c1/fc/9d/c1fc9d7f6ae08d56f2b84e81799790a5.gif") center / cover no-repeat;
 }
 
+/* Second background for the music, you know to make it cooooolerrrr!! */
+#musicvideo {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 0;
+    display: none;
+}
+
+body.musicvideo-active #musicvideo {
+    display: block;
+}
+
 li{
     list-style: none;
 }
 
 a{
+   font-family: 'Rajdhani', sans-serif;
     text-decoration: none;
     color:#fff;
     font-size: 1rem;
@@ -139,6 +155,7 @@ section#hero {
 }
 
 #hero h1{
+    font-family: 'Space Mono', monospace;
     font-size: 3rem;
     margin-bottom: 1rem;
 }
@@ -194,6 +211,7 @@ section#hero {
 }
 
 /* Music Player */
+
 #player-text {
     position: absolute;
     left: 24px;
@@ -253,6 +271,9 @@ section#hero {
     width: 100%;
     margin-top: 12px;
     gap: 16px;
+}
+nav-buttons.hover{
+    color: blue;
 }
 
 #playback {

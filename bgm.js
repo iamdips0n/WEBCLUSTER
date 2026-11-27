@@ -82,8 +82,30 @@ const songs = [
         cover: "./Music/bad.jpg",
         artist: "Billie Eilish",
         music: "./Music/bad.mp3"
+    },
+    { 
+         name: "Dilruba Dilnashi",
+        cover: "./Music/dilruba.jpg",
+        artist: "Rito Riba",
+        music: "./Music/Dilruba.mp3"
     }
 ];
+
+//New and Cool Background for our music player
+
+function showMusicVideo() {
+    document.body.classList.add("musicvideo-active");
+if (musicvideo) {
+    musicvideo.play().catch(err => console.log("Video Error:", err));
+}
+}
+
+function hideMusicVideo() {
+    document.body.classList.remove("musicvideo-active");
+    if (musicvideo) {
+        musicvideo.pause();
+    }
+}
 
 // make the ssets appear in the player, cool!!
 const audio = document.createElement("audio");
@@ -129,9 +151,25 @@ function changeplayicon() {
 
 }
 
-audio.addEventListener("play", changeplayicon);
-audio.addEventListener("pause", changeplayicon);
-audio.addEventListener("ended", changeplayicon);
+audio.addEventListener("play", function() {
+    if (bgm) {
+        bgm.pause();
+    }
+    changeplayicon();
+    showMusicVideo();
+});
+
+audio.addEventListener("pause", function()  {
+    changeplayicon();
+    hideMusicVideo();
+    bgm.play();
+});
+
+audio.addEventListener("ended", function() {
+    changeplayicon();
+    hideMusicVideo();
+    bgm.play();
+});
 
 
 //play the audio of song, 
@@ -165,9 +203,3 @@ function movePlayback() {
 setInterval(movePlayback, 1000);
 
 
-
-// stop the background music, its cool too!!
-audio.addEventListener("play", function() {
-    const bgm = document.getElementById("bgm");
-    bgm.pause();
-});
