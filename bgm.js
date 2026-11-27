@@ -83,6 +83,7 @@ const songs = [
         artist: "Billie Eilish",
         music: "./Music/bad.mp3"
     },
+    // I love this hindi song <3
     { 
          name: "Dilruba Dilnashi",
         cover: "./Music/dilruba.jpg",
@@ -140,7 +141,7 @@ playbutton.addEventListener("click", function() {
     }
     
 });
-
+// play and pause icons from fontawesome
 function changeplayicon() {
     if (audio.paused) {
         playbutton.className = "fa-solid fa-play fa-2x";
@@ -150,7 +151,7 @@ function changeplayicon() {
     }
 
 }
-
+// Change play and pause icon as well as play and pause the background video
 audio.addEventListener("play", function() {
     if (bgm) {
         bgm.pause();

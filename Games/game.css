@@ -14,7 +14,7 @@ position: fixed;
     body.gamevideo-active #gamevideo {
     display: block;
 }
-
+/* WebCluster Text At top */
 body {
     margin: 0;
     font-family: "Inconsolata", monospace;
@@ -58,6 +58,7 @@ body {
     line-height: 1;
 }
 
+/* Game Menu*/
 .game-selection {
     position: absolute;
     top: 20vh;

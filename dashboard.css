@@ -154,6 +154,7 @@ section#hero {
     color: #fff;
 }
 
+/* The WebCluster Text At the Center */
 #hero h1{
     font-family: 'Space Mono', monospace;
     font-size: 3rem;
@@ -263,7 +264,7 @@ section#hero {
     font-size: 1.6em;
 
 }
-
+/* Music Player buttons */
 #nav-buttons {
     display: flex;
     align-items: center;
