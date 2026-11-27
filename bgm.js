@@ -85,6 +85,7 @@ const songs = [
 
 const audio = document.createElement("audio");
 let currentSong = 0;
+updateSong();
 
 prev.addEventListener("click", function() {
     if (currentSong == 0) {
@@ -103,10 +104,65 @@ next.addEventListener("click", function() {
     updateSong();
 });
 
+playbutton.addEventListener("click", function() {
+    if (!audio.paused) {
+        audio.pause();
+    }
+    else {
+        audio.play();
+    }
+    
+});
+
+function changeplayicon() {
+    if (audio.paused) {
+        playbutton.className = "fa-solid fa-play fa-2x";
+    }
+    else {
+        playbutton.className = "fa-solid fa-pause fa-2x";
+    }
+
+}
+
+audio.addEventListener("play", changeplayicon);
+audio.addEventListener("pause", changeplayicon);
+audio.addEventListener("ended", changeplayicon);
+
+
+
 function updateSong() {
     const song = songs[currentSong];
+    const playing = !audio.paused;
+
     songCover.src = song.cover;
     songName.innerText = song.name;
     songArtist.innerText = song.artist;
 
+    audio.src = song.music;
+    if (playing) audio.play();
+    changeplayicon();
+
+    audio.onloadedmetadata = function() {
+        playback.value = 0;
+    playback.max = audio.duration;
+    }
 }
+
+playback.addEventListener("change", function() {
+    audio.currentTime = playback.value;
+});
+
+
+function movePlayback() {
+    playback.value = audio.currentTime;
+};
+
+setInterval(movePlayback, 1000);
+
+
+
+// stop the background music, its cool too!!
+audio.addEventListener("play", function() {
+    const bgm = document.getElementById("bgm");
+    bgm.pause();
+});
