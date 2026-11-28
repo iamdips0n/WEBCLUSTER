@@ -11,16 +11,22 @@
     <h1>SNAKE GAME</h1>
     <canvas id="board"></canvas>
 
-    <script src="bgm.js"></script>
-<body>
 
+
+    <script src="bgm.js"></script>
     <!--For Retro Game Background AutoPlay-->
      <div id="splash" onclick="startSplash()">
          Click Anywhere To Start The Game! Use Arrow Keys to Play!!
      </div>
 
-     </script>
 <!--Background Music from pixabay-->
    <audio id="bgm" src="bgm.mp3" loop></audio>
+
+   <!--Background Video From Pinterest -->
+   <video id="snakebg" autoplay muted loop>
+    <source src="./gamesbackground.mp4">
+</video>
+<div id="bgoverlay"></div>
+
 </body>
 </html>
