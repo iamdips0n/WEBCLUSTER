@@ -4,7 +4,7 @@
 [Click here](https://iamdips0n.github.io/WEBCLUSTER/dashboard)
 
 ### Here's the image of the main page
-
+<img width="1365" alt="Dashboard" src="assets/dashboard-subway.png" />
 
 ### The currently available games are :
 
