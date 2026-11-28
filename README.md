@@ -30,4 +30,40 @@
 
 <img width="1365" alt="Pac-Man game" src="assets/pacman.png" />
 
+## File Structure
 
+```
+WEBCLUSTER/
+├── dashboard.html          # home page (hero + music player)
+├── dashboard.css
+├── bgm.js                  # splash screen + music player logic
+├── WEBCLUSTERHOME.mp3      # lofi background music
+├── musicvideo.mp4          # dashboard background video
+├── README.md
+│
+├── assets/                 # README screenshots
+│   ├── dashboard-street.png
+│   ├── dashboard-music.png
+│   ├── games-hub.png
+│   ├── snake.png
+│   └── pacman.png
+│
+├── Music/                  # songs and cover images for the player
+│
+├── Games/                  # games hub
+│   ├── game.html
+│   ├── game.css
+│   ├── snake.svg
+│   └── pacman.svg
+│
+├── Snake/
+│   ├── snake.html
+│   ├── snake.css
+│   └── snake.js
+│
+└── Pac-Man/
+    ├── index.html
+    ├── pacman.css
+    ├── pacman.js
+    └── (sprite images, sounds, background video)
+```
